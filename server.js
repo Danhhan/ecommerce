@@ -1,6 +1,6 @@
 const app = require("./src/app");
 
-const PORT = 3000;
+const PORT = process.env.DEV_APP_PORT || 3000;
 
 const server = app.listen(PORT, () => {
 	console.log(`ecommerce start with ${PORT}`);

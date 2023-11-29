@@ -19,7 +19,9 @@ class Database {
 			mongoose.set("debug", { color: true });
 		}
 		mongoose
-			.connect(connectString)
+			.connect(connectString, {
+				dbName: 'ecommerce'
+			})
 			.then((_) => console.log(`Connected Mongodb Success PRO`, countConnect()))
 			.catch((err) => console.log(`Error connect!`));
 	}
@@ -27,7 +29,7 @@ class Database {
 		if (!Database.instance) {
 			Database.instance = new Database();
 		}
-
+		// Database.instance.
 		return Database.instance;
 	}
 }
